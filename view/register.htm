@@ -1,0 +1,89 @@
+<!-- register section -->
+<section class="team" id="team">
+   <div class="container">
+      <div class="row">
+         <div class="team-heading text-center"  style="margin-top:4.6em;font-size:40px;"  class="col-sm-9">
+            <h2>REGISTRATION</h2>
+         </div>
+         <div class="col-md-12 single-member col-sm-24" >
+            <div class="person" style="padding:1em;" id="res">
+               <form class="form-horizontal" role="form" ng-submit="submitForm()">
+                  <div class="form-group">
+                     <label for="firstName" class="col-sm-3 control-label">Full Name</label>
+                     <div class="col-sm-9">
+                        <input type="text" id="firstName" placeholder="Full Name" class="form-control" onfocus="if (this.value == 'Full Name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Full Name';}" autofocus  data-constraints="@NotEmpty" ng-model="user.name" ng-init="user.name = 'Full Name'" required>
+                        <span class="help-block">Last Name, First Name</span>
+                        <span class="help-block" ng-show="errorName">{{errorName}}</span>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="email" class="col-sm-3 control-label">Email</label>
+                     <div class="col-sm-9">
+                        <input type="email" id="email" placeholder="Email" class="form-control" onfocus="if (this.value == 'Email') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Email';}" data-constraints="@Email @NotEmpty" ng-model="user.email" ng-init="user.email = 'Email'" required>
+                        <span class="help-block" ng-show="errorMessage">{{errorEmail}}</span>
+
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="password" class="col-sm-3 control-label">Password</label>
+                     <div class="col-sm-9">
+                        <input type="password" id="password" placeholder="Password" class="form-control" data-constraints="@NotEmpty" ng-model="user.password" required>
+                        <span class="help-block" ng-show="errorMessage">{{errorPassword}}</span>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label for="country" class="col-sm-3 control-label">Country</label>
+                     <div class="col-sm-9">
+                        <select id="country" class="form-control">
+                           <option>Canada</option>
+                           <option>US</option>
+                        </select>
+                     </div>
+                  </div>
+                  <!-- /.form-group -->
+                  <div class="form-group">
+                     <div class="col-sm-9 col-sm-offset-3">
+                        <div class="checkbox">
+                           <label>
+						   
+                           <input type="checkbox" name="terms" ng-model="user.terms" ng-true-value="agree" ng-false-value="disagree" required>I accept <a data-toggle="modal" data-target="#myModal">terms</a>
+						   </label>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- /.form-group -->
+                  <div class="form-group">
+                     <div class="row">
+                        <div class="col-md-3" style="left:38%">
+                           <button type="Submit" class="btn btn-sharp btn-primary ">Submit</button>			
+                        </div>
+                     </div>
+                  </div>
+               </form>
+               <!-- /form -->
+               <!-- ./container -->
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Modal -->
+   <div id="myModal" class="modal fade" role="dialog" style="margin-top:6em">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Terms and Conditions</h4>
+            </div>
+            <div class="modal-body">
+               <p>Terms 1</p>
+               <p>Terms 2</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- end of register section -->
